@@ -1,0 +1,183 @@
+<<<<<<< HEAD
+/* --- RESET I OSNOVA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b1329; /* Tamno plava pozadina */
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 140px; /* Prostor da fiksni navbar ne prekrije sadržaj */
+}
+
+/* --- NAVIGACIJA I FOOTER (Zadržavamo stari vizualni stil) --- */
+.glavna-navigacija, .glavno-podnozje {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.glavna-navigacija {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.nav-kontejner, .footer-kontejner {
+    max-width: 1200px; margin: 0 auto; padding: 20px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.nav-linkovi { list-style: none; display: flex; gap: 30px; }
+.nav-linkovi a, .footer-linkovi a { text-decoration: none; color: #94a3b8; transition: color 0.3s; }
+.nav-linkovi a:hover, .nav-linkovi a.aktivno, .footer-linkovi a:hover { color: #ffffff; }
+.logo { font-size: 1.5rem; font-weight: 800; color: #ffffff; text-decoration: none; }
+.logo span { background: linear-gradient(45deg, #ff007f, #7f00ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* --- SPECIFIČNI STIL ZA STRANICU "O NAMA" (Dva stupca) --- */
+.onama-sekcija {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 40px;
+}
+
+.onama-kontejner {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Razmak između teksta i slike */
+    flex-wrap: wrap; /* Ako je ekran manji, slika ide ispod teksta */
+}
+
+.onama-tekst {
+    flex: 1;
+    min-width: 300px;
+}
+
+.premium-naslov {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #00d2ff; /* Svijetlo plava boja */
+    margin-bottom: 30px;
+}
+
+.onama-tekst p {
+    color: #94a3b8;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.onama-slika {
+    flex: 1;
+    min-width: 300px;
+}
+
+.onama-slika img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover; /* Slika zadržava proporcije */
+    border-radius: 12px; /* Elegantni zaobljeni rubovi */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Bogata sjena */
+}
+
+/* --- FOOTER NADOPUNA --- */
+.glavno-podnozje { border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 60px 0 20px 0; margin-top: 100px; width: 100%; }
+.footer-kontejner { flex-wrap: wrap; gap: 40px; }
+.footer-sekcija { flex: 1; min-width: 250px; }
+.footer-sekcija p, .footer-linkovi li, .footer-kontakt li { color: #94a3b8; font-size: 0.95rem; margin-top: 15px; }
+.footer-sekcija h4 { color: #ffffff; margin-bottom: 20px; }
+.footer-linkovi, .footer-kontakt { list-style: none; }
+.ikona { color: #00d2ff; margin-right: 8px; }
+.footer-dno { max-width: 1200px; margin: 40px auto 0 auto; padding: 20px 40px 0 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
+.footer-dno p { color: #64748b; font-size: 0.85rem; }
+=======
+/* --- RESET I OSNOVA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b1329; /* Tamno plava pozadina */
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 140px; /* Prostor da fiksni navbar ne prekrije sadržaj */
+}
+
+/* --- NAVIGACIJA I FOOTER (Zadržavamo stari vizualni stil) --- */
+.glavna-navigacija, .glavno-podnozje {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.glavna-navigacija {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.nav-kontejner, .footer-kontejner {
+    max-width: 1200px; margin: 0 auto; padding: 20px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.nav-linkovi { list-style: none; display: flex; gap: 30px; }
+.nav-linkovi a, .footer-linkovi a { text-decoration: none; color: #94a3b8; transition: color 0.3s; }
+.nav-linkovi a:hover, .nav-linkovi a.aktivno, .footer-linkovi a:hover { color: #ffffff; }
+.logo { font-size: 1.5rem; font-weight: 800; color: #ffffff; text-decoration: none; }
+.logo span { background: linear-gradient(45deg, #ff007f, #7f00ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* --- SPECIFIČNI STIL ZA STRANICU "O NAMA" (Dva stupca) --- */
+.onama-sekcija {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 40px;
+}
+
+.onama-kontejner {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Razmak između teksta i slike */
+    flex-wrap: wrap; /* Ako je ekran manji, slika ide ispod teksta */
+}
+
+.onama-tekst {
+    flex: 1;
+    min-width: 300px;
+}
+
+.premium-naslov {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #00d2ff; /* Svijetlo plava boja */
+    margin-bottom: 30px;
+}
+
+.onama-tekst p {
+    color: #94a3b8;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.onama-slika {
+    flex: 1;
+    min-width: 300px;
+}
+
+.onama-slika img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover; /* Slika zadržava proporcije */
+    border-radius: 12px; /* Elegantni zaobljeni rubovi */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Bogata sjena */
+}
+
+/* --- FOOTER NADOPUNA --- */
+.glavno-podnozje { border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 60px 0 20px 0; margin-top: 100px; width: 100%; }
+.footer-kontejner { flex-wrap: wrap; gap: 40px; }
+.footer-sekcija { flex: 1; min-width: 250px; }
+.footer-sekcija p, .footer-linkovi li, .footer-kontakt li { color: #94a3b8; font-size: 0.95rem; margin-top: 15px; }
+.footer-sekcija h4 { color: #ffffff; margin-bottom: 20px; }
+.footer-linkovi, .footer-kontakt { list-style: none; }
+.ikona { color: #00d2ff; margin-right: 8px; }
+.footer-dno { max-width: 1200px; margin: 40px auto 0 auto; padding: 20px 40px 0 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
+.footer-dno p { color: #64748b; font-size: 0.85rem; }
+>>>>>>> 7dc3462 (css files moved from folder css to one separate folder)

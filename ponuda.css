@@ -1,0 +1,337 @@
+/* --- RESETIRANJE I OSNOVA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f172a; /* Tamna luksuzna pozadina iz vašeg dizajna */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    padding-top: 180px; /* Spušta naslov savršeno ispod staklene navigacije */
+    display: block;     
+}
+
+.ponuda-sekcija {
+    max-width: 1200px;
+    margin: 10px auto 40px auto; /* Smanjen gornji razmak da se sadržaj približi naslovu */
+    padding: 0 20px;
+}
+
+/* --- PREMIUM GRADIJENTNI NASLOV STRANICE --- */
+.premium-naslov {
+    text-align: center; 
+    width: 100%;        
+    font-size: 4rem;
+    font-weight: 800;   
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #462dd7, #00ffff); /* Plavo-tirkizni gradijent */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 20px;   
+    margin-bottom: 10px;  
+}
+
+.ponuda-podnaslov {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 15px auto; /* Donja margina smanjena na 15px prema vašem zahtjevu */
+    line-height: 1.6;
+}
+
+/* --- NAVIGACIJSKA TRAKA (Glassmorphism) --- */
+.glavna-navigacija {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.8); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.nav-kontejner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    background: linear-gradient(45deg, #ff007f, #7f00ff); /* Rozo-ljubičasti gradijent za logo */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-linkovi {
+    list-style: none;
+    display: flex;
+    gap: 30px; 
+}
+
+.nav-linkovi a {
+    text-decoration: none;
+    color: #94a3b8; 
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease; 
+}
+
+.nav-linkovi a:hover, 
+.nav-linkovi a.aktivno {
+    color: #ffffff;
+}
+
+/* --- STILOVI ZA KATEGORIJE --- */
+.kategorija-blok {
+    margin-bottom: 80px; 
+}
+
+.kategorija-blok:first-of-type {
+    margin-top: 0px;
+    padding-top: 0px; /* Poništava razmak kako bi se prva kategorija približila uvodnom tekstu */
+}
+
+.kategorija-naslov {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+    font-weight: 700;
+}
+/* --- HORIZONTALNI RASPODJED KARTICA --- */
+.ponuda-grid-horizontalni {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.gliser-kartica-horizontalna {
+    display: grid;
+    grid-template-columns: 380px 1fr; /* Fiksna širina za sliku glisera */
+    background: rgba(30, 41, 59, 0.4); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.gliser-kartica-horizontalna:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 255, 255, 0.3);
+}
+
+.gliser-slika {
+    position: relative;
+    height: 100%;
+    min-height: 280px;
+    overflow: hidden;
+}
+
+.gliser-slika img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gliser-sadrzaj-desno {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gliser-sadrzaj-desno h3 {
+    font-size: 1.7rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Specifikacije u dva stupca */
+.gliser-detaljne-specifikacije {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px 30px;
+    margin-bottom: 25px;
+}
+
+.gliser-detaljne-specifikacije li {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 6px;
+}
+
+.gliser-detaljne-specifikacije li span {
+    font-weight: 600;
+    color: #00ffff; /* Istaknuti tirkizni detalji specifikacija */
+}
+
+/* Donja linija: cijena i akcijski gumb */
+.gliser-cijena-upit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+.cijena-oznaka {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.gumb-upit-mali {
+    background: linear-gradient(45deg, #462dd7, #00ffff);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(70, 45, 215, 0.3);
+}
+
+.gumb-upit-mali:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+.oznaka-popularno {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(45deg, #ff007f, #7f00ff);
+    color: #ffffff;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 6px;
+    z-index: 10;
+}
+
+/* Proširenje okvira za sliku u zadnjoj kategoriji (Plovila s kabinom) */
+.kategorija-blok:last-of-type .gliser-kartica-horizontalna {
+    grid-template-columns: 440px 1fr;
+}
+
+/* --- STILOVI PODNOŽJA (FOOTER) --- */
+.glavno-podnozje {
+    background: rgba(15, 23, 42, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.08); 
+    padding: 60px 0 20px 0;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.footer-kontejner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 40px;
+}
+
+.footer-sekcija {
+    flex: 1;
+    min-width: 250px; 
+}
+
+.footer-sekcija p {
+    color: #94a3b8;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-sekcija h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-linkovi, .footer-kontakt {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-linkovi li, .footer-kontakt li {
+    margin-bottom: 12px;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.footer-linkovi a {
+    text-decoration: none;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.footer-linkovi a:hover {
+    color: #00ffff;
+}
+
+.footer-dno {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE PRILAGODBE --- */
+@media (max-width: 992px) {
+    .gliser-kartica-horizontalna,
+    .kategorija-blok:last-of-type .gliser-kartica-horizontalna {
+        grid-template-columns: 1fr;
+    }
+    .gliser-slika {
+        height: 280px;
+    }
+}
+
+@media (max-width: 650px) {
+    .gliser-detaljne-specifikacije {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .gliser-cijena-upit {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    .gumb-upit-mali {
+        width: 100%;
+        text-align: center;
+    }
+}

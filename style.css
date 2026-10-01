@@ -1,0 +1,645 @@
+<<<<<<< HEAD
+body {
+    background-color: #0f172a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 100px; /* Daje prostor ispod navbara da ne prekrije naslov */
+    display: block;     /* Ključno: vraća elemente u prirodni vertikalni niz */
+}
+
+.premium-naslov {
+    text-align: center; /* Centriranje teksta u sredinu ekrana */
+    width: 100%;        /* Naslov uzima punu širinu ekrana za pravilno centriranje */
+    font-size: 4rem;
+    font-weight: 800;   
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #462dd7, #00ffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Ključne linije za pozicioniranje tik ispod crte: */
+    margin-top: 20px;   /* Razmak od crte navbara */
+    margin-bottom: 40px;/* Razmak IZMEĐU naslova i slideshowa koji ide ispod */  
+}
+
+/* --- RESETIRANJE I OSNOVA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f172a; /* Tamna pozadina iz prošlog primjera */
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 120px; /* Daje prostor ispod navbara da ne prekrije naslov */
+}
+
+/* --- NAVIGACIJSKA TRAKA --- */
+.glavna-navigacija {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Efekt stakla (Glassmorphism): */
+    background: rgba(15, 23, 42, 0.8); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18); /* Jasnija bijela crta */
+}
+
+.nav-kontejner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; /* Logo lijevo, linkovi desno */
+    align-items: center;
+}
+
+/* --- LOGO --- */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    background: linear-gradient(45deg, #ff007f, #7f00ff); /* Isti gradient kao na naslovu */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- LINKOVI --- */
+.nav-linkovi {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Razmak između linkova */
+}
+
+.nav-linkovi a {
+    text-decoration: none;
+    color: #94a3b8; /* Blago siva boja za manje važne linkove */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Glatki prijelaz boje */
+}
+
+/* Efekt prelaska mišem (Hover) i aktivna stranica */
+.nav-linkovi a:hover, 
+.nav-linkovi a.aktivno {
+    color: #ffffff; /* Tekst svijetli u bijelo */
+}
+/* --- SLIDESHOW STILOVI --- */
+.slideshow-kontejner {
+    max-width: 1300px; /* Povećano za širi i upečatljiviji izgled */
+    position: relative;
+    margin: 20px auto 60px auto; /* Centrirano vodoravno, s razmakom od naslova */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Elegantna tamna sjena */
+    border-radius: 12px; /* Zaobljeni rubovi cijelog slideshowa */
+    overflow: hidden; /* Skriva dijelove slika koji izlaze iz okvira */
+}
+
+/* Sakrij sve slike po zadanim postavkama */
+.moj-slide {
+    display: none;
+}
+
+/* Stil za same slike */
+.moj-slide img {
+    width: 100%;       /* Slika će se rastegnuti na punu širinu kontejnera (1300px) */
+    height: 550px;     /* Fiksna visina osigurava da su SVE slike potpuno jednake */
+    object-fit: cover; /* Najvažnije: slika zadržava svoj omjer i NE rasteže se ružno */
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* Tekst unutar slike */
+.tekst-slike {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.6); /* Poluprozirna tamna pozadina teksta */
+    backdrop-filter: blur(8px); /* Efekt stakla na tekstu */
+    border-radius: 8px;
+}
+
+/* Animacija prožimanja (Fade efekt) */
+.izblijedi {
+    animation: fader 1.5s ease-in-out;
+}
+
+@keyframes fader {
+    from { opacity: .4; } 
+    to { opacity: 1; }
+}
+
+/* --- STIL ZA TEKST ISPOD SLIDESHOWA --- */
+.tekst-ispod-slideshowa {
+    max-width: 800px;        /* Ograničavamo širinu teksta radi lakšeg čitanja */
+    margin: 40px auto 80px auto; /* Centriranje i razmak od slideshowa iznad i sadržaja ispod */
+    text-align: center;      /* Centriranje teksta */
+    padding: 0 20px;         /* Sigurnosni razmak za mobilne ekrane */
+}
+
+.tekst-ispod-slideshowa h2 {
+    color: #00d2ff;          /* Svijetlo plava boja, usklađena s vašim naslovom */
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;     /* Razmak između podnaslova i odlomka teksta */
+}
+
+.tekst-ispod-slideshowa p {
+    color: #94a3b8;          /* Elegantna blago siva boja za ugodno čitanje na tamnoj pozadini */
+    font-size: 1.1rem;
+    line-height: 1.6;        /* Veći razmak između redova za bolju čitljivost */
+     margin-bottom: 20px;     /* KLJUČNO: Stvara savršen razmak između prvog i drugog odlomka */
+}
+
+/* --- PROŠIRENI STILOVI ZA TEKST --- */
+.tekst-ispod-slideshowa {
+    max-width: 850px;
+    margin: 50px auto 100px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Osnovni odlomci teksta */
+.tekst-ispod-slideshowa p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    text-align: justify; /* Tekst će biti uredno poravnat s obje strane */
+}
+
+/* Glavni podnaslov sekcije */
+.tekst-ispod-slideshowa h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin: 40px 0 25px 0;
+    text-align: center;
+}
+
+/* Manji podnaslovi tema */
+.tekst-ispod-slideshowa h3 {
+    color: #00d2ff; /* Boja usklađena s glavnim naslovom */
+    font-size: 1.4rem;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Stilovi za liste (brojevi i točkice) */
+.num-lista, .tockasta-lista {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    padding-left: 25px; /* Razmak za brojeve/točkice */
+    text-align: left;
+}
+
+.num-lista li, .tockasta-lista li {
+    margin-bottom: 12px; /* Razmak između stavki u listi */
+}
+
+/* Isticanje ključnih riječi unutar lista */
+.num-lista strong, .tockasta-lista strong {
+    color: #ffffff; /* Bijela boja za podebljane pojmove da bolje iskoče */
+}
+
+/* Posebna kutija za zakone i kazne kako bi skrenula pozornost */
+.zakon-blok {
+    background: rgba(255, 0, 127, 0.05); /* Vrlo blagi crvenkasto-ružičasti ton za upozorenje */
+    border-left: 4px solid #ff007f; /* Živa linija na lijevoj margini */
+    padding: 20px 25px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 45px;
+}
+
+.zakon-blok h3 {
+    color: #ff007f; /* Naslov upozorenja u crvenoj/ružičastoj boji */
+    margin-top: 0;
+}
+
+/* --- PODNOŽJE (FOOTER) STILOVI --- */
+.glavno-podnozje {
+    background: rgba(15, 23, 42, 0.9); /* Isti tamni ton kao i navbar */
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Suptilna crta razgraničenja na vrhu */
+    padding: 60px 0 20px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.footer-kontejner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* Razmješta tri sekcije ravnomjerno */
+    flex-wrap: wrap; /* Omogućuje slaganje jedno ispod drugog na mobitelima */
+    gap: 40px;
+}
+
+.footer-sekcija {
+    flex: 1;
+    min-width: 250px; /* Minimalna širina prije nego prijeđe u novi red */
+}
+
+/* Stilovi unutar prve sekcije (Logo i opis) */
+.footer-sekcija p {
+    color: #94a3b8;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Naslovi u sekcijama podnožja */
+.footer-sekcija h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Popisi u podnožju */
+.footer-linkovi, .footer-kontakt {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-linkovi li, .footer-kontakt li {
+    margin-bottom: 12px;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+/* Stilovi za linkove i hover efekt */
+.footer-linkovi a {
+    text-decoration: none;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.footer-linkovi a:hover {
+    color: #00d2ff; /* Isticanje bojom pri prelasku mišem */
+}
+
+/* Ikone za kontakt */
+.ikona {
+    color: #00d2ff; /* Boja za mail, telefon i lokaciju */
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Donji dio s autorskim pravima */
+.footer-dno {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 20px 40px 0 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Tanka crta iznad copyrighta */
+    text-align: center;
+}
+
+.footer-dno p {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+
+=======
+body {
+    background-color: #0f172a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 100px; /* Daje prostor ispod navbara da ne prekrije naslov */
+    display: block;     /* Ključno: vraća elemente u prirodni vertikalni niz */
+}
+
+.premium-naslov {
+    text-align: center; /* Centriranje teksta u sredinu ekrana */
+    width: 100%;        /* Naslov uzima punu širinu ekrana za pravilno centriranje */
+    font-size: 4rem;
+    font-weight: 800;   
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #462dd7, #00ffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Ključne linije za pozicioniranje tik ispod crte: */
+    margin-top: 20px;   /* Razmak od crte navbara */
+    margin-bottom: 40px;/* Razmak IZMEĐU naslova i slideshowa koji ide ispod */  
+}
+
+/* --- RESETIRANJE I OSNOVA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f172a; /* Tamna pozadina iz prošlog primjera */
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 120px; /* Daje prostor ispod navbara da ne prekrije naslov */
+}
+
+/* --- NAVIGACIJSKA TRAKA --- */
+.glavna-navigacija {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Efekt stakla (Glassmorphism): */
+    background: rgba(15, 23, 42, 0.8); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18); /* Jasnija bijela crta */
+}
+
+.nav-kontejner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; /* Logo lijevo, linkovi desno */
+    align-items: center;
+}
+
+/* --- LOGO --- */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    background: linear-gradient(45deg, #ff007f, #7f00ff); /* Isti gradient kao na naslovu */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- LINKOVI --- */
+.nav-linkovi {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Razmak između linkova */
+}
+
+.nav-linkovi a {
+    text-decoration: none;
+    color: #94a3b8; /* Blago siva boja za manje važne linkove */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Glatki prijelaz boje */
+}
+
+/* Efekt prelaska mišem (Hover) i aktivna stranica */
+.nav-linkovi a:hover, 
+.nav-linkovi a.aktivno {
+    color: #ffffff; /* Tekst svijetli u bijelo */
+}
+/* --- SLIDESHOW STILOVI --- */
+.slideshow-kontejner {
+    max-width: 1300px; /* Povećano za širi i upečatljiviji izgled */
+    position: relative;
+    margin: 20px auto 60px auto; /* Centrirano vodoravno, s razmakom od naslova */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Elegantna tamna sjena */
+    border-radius: 12px; /* Zaobljeni rubovi cijelog slideshowa */
+    overflow: hidden; /* Skriva dijelove slika koji izlaze iz okvira */
+}
+
+/* Sakrij sve slike po zadanim postavkama */
+.moj-slide {
+    display: none;
+}
+
+/* Stil za same slike */
+.moj-slide img {
+    width: 100%;       /* Slika će se rastegnuti na punu širinu kontejnera (1300px) */
+    height: 550px;     /* Fiksna visina osigurava da su SVE slike potpuno jednake */
+    object-fit: cover; /* Najvažnije: slika zadržava svoj omjer i NE rasteže se ružno */
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* Tekst unutar slike */
+.tekst-slike {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.6); /* Poluprozirna tamna pozadina teksta */
+    backdrop-filter: blur(8px); /* Efekt stakla na tekstu */
+    border-radius: 8px;
+}
+
+/* Animacija prožimanja (Fade efekt) */
+.izblijedi {
+    animation: fader 1.5s ease-in-out;
+}
+
+@keyframes fader {
+    from { opacity: .4; } 
+    to { opacity: 1; }
+}
+
+/* --- STIL ZA TEKST ISPOD SLIDESHOWA --- */
+.tekst-ispod-slideshowa {
+    max-width: 800px;        /* Ograničavamo širinu teksta radi lakšeg čitanja */
+    margin: 40px auto 80px auto; /* Centriranje i razmak od slideshowa iznad i sadržaja ispod */
+    text-align: center;      /* Centriranje teksta */
+    padding: 0 20px;         /* Sigurnosni razmak za mobilne ekrane */
+}
+
+.tekst-ispod-slideshowa h2 {
+    color: #00d2ff;          /* Svijetlo plava boja, usklađena s vašim naslovom */
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;     /* Razmak između podnaslova i odlomka teksta */
+}
+
+.tekst-ispod-slideshowa p {
+    color: #94a3b8;          /* Elegantna blago siva boja za ugodno čitanje na tamnoj pozadini */
+    font-size: 1.1rem;
+    line-height: 1.6;        /* Veći razmak između redova za bolju čitljivost */
+     margin-bottom: 20px;     /* KLJUČNO: Stvara savršen razmak između prvog i drugog odlomka */
+}
+
+/* --- PROŠIRENI STILOVI ZA TEKST --- */
+.tekst-ispod-slideshowa {
+    max-width: 850px;
+    margin: 50px auto 100px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Osnovni odlomci teksta */
+.tekst-ispod-slideshowa p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    text-align: justify; /* Tekst će biti uredno poravnat s obje strane */
+}
+
+/* Glavni podnaslov sekcije */
+.tekst-ispod-slideshowa h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin: 40px 0 25px 0;
+    text-align: center;
+}
+
+/* Manji podnaslovi tema */
+.tekst-ispod-slideshowa h3 {
+    color: #00d2ff; /* Boja usklađena s glavnim naslovom */
+    font-size: 1.4rem;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Stilovi za liste (brojevi i točkice) */
+.num-lista, .tockasta-lista {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    padding-left: 25px; /* Razmak za brojeve/točkice */
+    text-align: left;
+}
+
+.num-lista li, .tockasta-lista li {
+    margin-bottom: 12px; /* Razmak između stavki u listi */
+}
+
+/* Isticanje ključnih riječi unutar lista */
+.num-lista strong, .tockasta-lista strong {
+    color: #ffffff; /* Bijela boja za podebljane pojmove da bolje iskoče */
+}
+
+/* Posebna kutija za zakone i kazne kako bi skrenula pozornost */
+.zakon-blok {
+    background: rgba(255, 0, 127, 0.05); /* Vrlo blagi crvenkasto-ružičasti ton za upozorenje */
+    border-left: 4px solid #ff007f; /* Živa linija na lijevoj margini */
+    padding: 20px 25px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 45px;
+}
+
+.zakon-blok h3 {
+    color: #ff007f; /* Naslov upozorenja u crvenoj/ružičastoj boji */
+    margin-top: 0;
+}
+
+/* --- PODNOŽJE (FOOTER) STILOVI --- */
+.glavno-podnozje {
+    background: rgba(15, 23, 42, 0.9); /* Isti tamni ton kao i navbar */
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Suptilna crta razgraničenja na vrhu */
+    padding: 60px 0 20px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.footer-kontejner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* Razmješta tri sekcije ravnomjerno */
+    flex-wrap: wrap; /* Omogućuje slaganje jedno ispod drugog na mobitelima */
+    gap: 40px;
+}
+
+.footer-sekcija {
+    flex: 1;
+    min-width: 250px; /* Minimalna širina prije nego prijeđe u novi red */
+}
+
+/* Stilovi unutar prve sekcije (Logo i opis) */
+.footer-sekcija p {
+    color: #94a3b8;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Naslovi u sekcijama podnožja */
+.footer-sekcija h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Popisi u podnožju */
+.footer-linkovi, .footer-kontakt {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-linkovi li, .footer-kontakt li {
+    margin-bottom: 12px;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+/* Stilovi za linkove i hover efekt */
+.footer-linkovi a {
+    text-decoration: none;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.footer-linkovi a:hover {
+    color: #00d2ff; /* Isticanje bojom pri prelasku mišem */
+}
+
+/* Ikone za kontakt */
+.ikona {
+    color: #00d2ff; /* Boja za mail, telefon i lokaciju */
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Donji dio s autorskim pravima */
+.footer-dno {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 20px 40px 0 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Tanka crta iznad copyrighta */
+    text-align: center;
+}
+
+.footer-dno p {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+
+>>>>>>> 7dc3462 (css files moved from folder css to one separate folder)
